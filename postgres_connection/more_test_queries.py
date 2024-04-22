@@ -11,35 +11,35 @@ try:
 
     with connection.cursor() as cursor:
         try:
-            # cursor.execute("""
-            #     SELECT name, country
-            #     FROM clients
-            #     ORDER BY name;
-            # """)
-            #
-            # [print(row) for row in cursor.fetchall()]
+            cursor.execute("""
+                SELECT name, country
+                FROM clients
+                ORDER BY name;
+            """)
+            
+            [print(row) for row in cursor.fetchall()]
 
-            # cursor.execute("""
-            #     SELECT name, employees_count
-            #     FROM departments
-            #     WHERE employees_count > 300
-            #     ORDER BY employees_count DESC;
-            # """)
-            #
-            # [print(row) for row in cursor.fetchall()]
+            cursor.execute("""
+                SELECT name, employees_count
+                FROM departments
+                WHERE employees_count > 300
+                ORDER BY employees_count DESC;
+            """)
+            
+            [print(row) for row in cursor.fetchall()]
 
-            # cursor.execute("""
-            #     SELECT
-            #         CONCAT(first_name, ' ', last_name) AS full_name,
-            #         job_title
-            #     FROM employees
-            #     ORDER BY full_name;
-            # """)
-            #
-            # [print(f'Full name: {row[0]}, Job Title: {row[1]}') for row in cursor.fetchall()]
+            cursor.execute("""
+                SELECT
+                    CONCAT(first_name, ' ', last_name) AS full_name,
+                    job_title
+                FROM employees
+                ORDER BY full_name;
+            """)
+            
+            [print(f'Full name: {row[0]}, Job Title: {row[1]}') for row in cursor.fetchall()]
 
-            # cursor.execute("SELECT SUM(budget) FROM projects")
-            # print(f'Total income: {cursor.fetchone()[0]}$')
+            cursor.execute("SELECT SUM(budget) FROM projects")
+            print(f'Total income: {cursor.fetchone()[0]}$')
 
             cursor.execute("""
                 SELECT 
