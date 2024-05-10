@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dealerships</title>
+</head>
+<body>
+    <div style="text-align: center">
+    <h1>All dealerships:</h1>
+        <ul>
+            {% for dealership in dealerships %}
+                <li style="list-style: none">
+                    <h3>{{ dealership }}</h3>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div>
+        <table style="text-align: center">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Location</th>
+                    <th>Open Hours</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for dealership in filtered_dealerships %}
+                    {% if dealership.name == 'Euratek 1' %}
+                    	<tr style="color: red">
+                        <td>{{ dealership.id }}</td>
+                        <td style="font-weight: bold">{{ dealership.name }}</td>
+                        <td>{{ dealership.location }}</td>
+                        <td>{{ dealership.open_hours }}</td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                        <td>{{ dealership.id }}</td>
+                        <td>{{ dealership.name }}</td>
+                        <td>{{ dealership.location }}</td>
+                        <td>{{ dealership.open_hours }}</td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+@import "base/navigation.css";
+@import "base/footer.css";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font: 16px/1.5 Helvetica sans-serif;
+}
+
+body {
+    background-color: aliceblue;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Times New Roman", sans-serif;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2.6em;
+}
+
+h3 {
+    font-size: 2.2em;
+}
+
+h4 {
+    font-size: 1.8em;
+}
+
+h5 {
+    font-size: 1.5em;
+}
+
+h6 {
+    font-size: 1.2em;
+}
+
+button {
+    background-color: #04AA6D;
+    border: none;
+    border-radius: 0.5em;
+    color: white;
+    padding: 15px 32px;
+    margin: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #f4f4f4;
+    color: #000;
+    border: 1px solid #000;
+    transition: 0.3s ease-in;
+}
+
+.greet {
+    display: none;
+    padding: 1em;
+}
+
+.owners-list {
+    padding: 10px;
+    display: none;
+}
+
+.owners-list li {
+    font-size: 18px;
+    font-style: italic;
+    font-weight: bold;
+}

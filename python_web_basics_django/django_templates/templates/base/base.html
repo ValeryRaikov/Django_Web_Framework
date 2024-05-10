@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome again</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'hello' %}">Hello</a></li>
+            <li><a href="{% url 'numbers' %}">Numbers</a></li>
+            <li><a href="{% url 'dealers' %}">Dealers</a></li>
+            <li><a href="{% url 'owners' %}">Owners</a></li>
+        </ul>
+    </div>
+
+    {% block content %}
+    {% endblock %}
+
+    <div class="site-footer">
+        <h4>All rights reserved... &copy;2024</h4>
+    </div>
+
+    {% block body_end_scripts %}
+    {% endblock %}
+</body>
+</html>

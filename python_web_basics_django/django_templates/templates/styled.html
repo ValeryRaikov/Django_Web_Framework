@@ -1,0 +1,21 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <button id="greet_btn">Click me!</button>
+
+    <h2 class="greet">Hello there, We are testing JS :)</h2>
+
+    <button id="owners">Show owners</button>
+
+    <ul class="owners-list">
+        {% for owner in owners %}
+            <li>{{ owner|capfirst }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block body_end_scripts %}
+    <script src="{% static 'js/script.js' %}"></script>
+{% endblock %}

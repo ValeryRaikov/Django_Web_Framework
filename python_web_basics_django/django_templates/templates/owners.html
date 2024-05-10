@@ -1,0 +1,23 @@
+{% load string_filters %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vehicle owners</title>
+</head>
+<body>
+    <h1>Vehicle owners</h1>
+
+    <ul>
+        {% for owner in owners %}
+            <li><p>{{ owner }}</p></li>
+        {% endfor %}
+    </ul>
+
+    <p>{{ owners|join:', ' }}</p>
+    <p>{{ owners|join_names }}</p>
+
+    <a href="{% url 'dealers' %}">Return to dealerships</a>
+</body>
+</html>

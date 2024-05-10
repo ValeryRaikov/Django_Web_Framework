@@ -1,0 +1,25 @@
+{% load string_filters %}
+{% load int_filters %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test filters</title>
+</head>
+<body>
+    <h1>String filters</h1>
+    <p>{{ text|capitalize }}</p>
+    <p>{{ text2|capitalize }}</p>
+    <p>{{ text|to_upper_case }}</p>
+    <p>{{ text2|to_upper_case }}</p>
+
+    <h1>Int filters</h1>
+    <p>{{ number|self_multiply }}</p>
+    <p>{{ number2|self_multiply }}</p>
+    <p>{{ number|sqrt }}</p>
+    <p>{{ number2|sqrt }}</p>
+    <p>{{ number3|sqrt }}</p>
+    <p>{{ number1|increase_by:200 }}</p>
+</body>
+</html>

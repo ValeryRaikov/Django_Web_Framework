@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Greet page</title>
+</head>
+<body>
+    <h1>Hello, {{ name|capfirst }} - {{ age }}. How are you today?</h1>
+
+    <a href="{% url 'home' %}">Return to Home...</a>
+</body>
+</html>
