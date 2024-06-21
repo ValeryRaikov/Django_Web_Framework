@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bound Forms</title>
+</head>
+<body>
+    <h1>Demonstrating bound forms</h1>
+    <form method="post" action="{% url 'create user' %}">
+        {% csrf_token %}
+        {{ user_form.as_p }}
+
+        <button>Save!</button> {# Same as <input type="submit"> #}
+    </form>
+
+    {% if is_valid %}
+        <h2>The form is valid!</h2>
+    {% else %}
+        <h2>The form is invalid!</h2>
+    {% endif %}
+</body>
+</html>
