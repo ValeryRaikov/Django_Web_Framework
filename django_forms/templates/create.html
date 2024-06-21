@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create user</title>
+</head>
+<body>
+    <form method="post" action="{% url 'manage user' %}">
+        {% csrf_token %}
+        {{ user_form.as_p }}
+
+        <button>Save!</button>
+    </form>
+
+    <ul>
+        <li>
+            <a href="{% url 'default' %}">Home</a>
+        </li>
+        <li>
+            <a href="{% url 'create user' %}">Create user</a>
+        </li>
+    </ul>
+</body>
+</html>
