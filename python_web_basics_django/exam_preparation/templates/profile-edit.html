@@ -1,0 +1,17 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block page_content %}
+
+    <h1>Enter your new data</h1>
+    <div class="form">
+        <form method="POST" action="{% url 'edit profile' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form }}
+            {{ form.errors }}
+            <input type="submit" value="Edit">
+        </form>
+    </div>
+
+{% endblock %}
