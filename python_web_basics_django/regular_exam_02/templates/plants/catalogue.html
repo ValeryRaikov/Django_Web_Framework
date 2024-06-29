@@ -1,0 +1,38 @@
+{% extends 'base/base.html' %}
+
+{% block page_content %}
+    <header>
+        <!-- Navigation Bar -->
+        <h1><a class="index-navigation" href="{% url 'show index' %}">MyPlants</a></h1>
+        <nav>
+            <a href="{% url 'show catalogue' %}">Catalogue</a>
+            <a href="{% url 'create plant' %}">Create Plant</a>
+            <a href="{% url 'profile details' %}">Profile</a>
+        </nav>
+    </header>
+
+    <!-- Display paragraph: If there are no plants yet-->
+    {% if not plants_created %}
+        <p class="no-articles">No plants yet</p>
+    {% else %}
+        <!-- Display div "plant" with information about every plant (if any)-->
+        <section id="catalogue">
+            {% for plant in plants %}
+                <div class="plant-card">
+                    <div class="image-wrap">
+                        <!-- plant image -->
+                        <img src="{{ plant.image_url }}" alt="{{ plant.type }}">
+                    </div>
+                    <!-- plant name -->
+                    <h3>{{ plant.name }}</h3>
+                    <!-- plant description -->
+                    <h1>{{ plant.description }}</h1>
+                    <div class="details-buttons">
+                        <!-- plant details button -->
+                        <a href="{% url 'plant details' plant.pk %}" class="details-btn">Details</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </section>
+    {% endif %}
+{% endblock %}

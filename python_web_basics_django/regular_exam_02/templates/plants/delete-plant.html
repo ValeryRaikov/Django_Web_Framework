@@ -1,0 +1,29 @@
+{% extends 'base/base.html' %}
+
+{% block page_content %}
+    <header>
+        <!-- Navigation Bar -->
+        <h1><a class="index-navigation" href="{% url 'show index' %}">MyPlants</a></h1>
+        <nav>
+            <a href="{% url 'show catalogue' %}">Catalogue</a>
+            <a href="{% url 'create plant' %}">Create Plant</a>
+            <a href="{% url 'profile details' %}">Profile</a>
+        </nav>
+    </header>
+
+    <!-- delete plant form -->
+    <section id="delete-page" class="auth">
+        <form method="post" action="{% url 'delete plant' plant.pk %}" id="delete">
+            <div class="container">
+                <h1>Delete Plant</h1>
+
+                {{ form.as_p }}
+                {{ form.errors }}
+                {% csrf_token %}
+
+                <input class="btn submit" type="submit" value="Delete Plant">
+
+            </div>
+        </form>
+    </section>
+{% endblock %}

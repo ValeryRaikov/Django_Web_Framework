@@ -1,0 +1,28 @@
+{% extends 'base/base.html' %}
+
+{% block page_content %}
+    <header>
+        <!-- Navigation Bar -->
+        <h1><a class="index-navigation" href="{% url 'show index' %}">MyPlants</a></h1>
+        <nav>
+            <a href="{% url 'show catalogue' %}">Catalogue</a>
+            <a href="{% url 'create plant' %}">Create Plant</a>
+            <a href="{% url 'profile details' %}">Profile</a>
+        </nav>
+    </header>
+
+    <!-- edit profile form -->
+    <section id="register-page" class="content auth">
+        <form method="post"  action="{% url 'edit profile' %}" id="register">
+            <div class="container">
+                <h1>Edit Profile</h1>
+
+                {{ form.as_p }}
+                {{ form.errors }}
+                {% csrf_token %}
+
+                <input class="btn" type="submit" value="Edit Profile">
+            </div>
+        </form>
+    </section>
+{% endblock %}

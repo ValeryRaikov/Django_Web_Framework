@@ -1,0 +1,28 @@
+{% extends 'base/base.html' %}
+
+{% block page_content %}
+    <header>
+        <!-- Navigation Bar -->
+        <h1><a class="index-navigation" href="{% url 'show index' %}">MyPlants</a></h1>
+        <nav>
+            <a href="{% url 'show catalogue' %}">Catalogue</a>
+            <a href="{% url 'create plant' %}">Create Plant</a>
+            <a href="{% url 'profile details' %}">Profile</a>
+        </nav>
+    </header>
+
+    <!-- edit plant form -->
+    <section id="create-page" class="auth">
+        <form method="post" action="{% url 'edit plant' plant.pk %}" id="create">
+            <div class="container">
+                <h1>Edit Plant</h1>
+
+                {{ form.as_p }}
+                {{ form.errors }}
+                {% csrf_token %}
+
+                <input class="btn submit" type="submit" value="Edit Plant">
+            </div>
+        </form>
+    </section>
+{% endblock %}
