@@ -1,0 +1,14 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block main_content %}
+
+    <div class="wrapper">
+        <button class="display-btn" id="departments" type="submit" data-url="{% url 'show departments' %}">
+            Click to display!
+        </button>
+    </div>
+
+    <script src="{% static 'javascript/script.js' %}"></script>
+
+{% endblock %}

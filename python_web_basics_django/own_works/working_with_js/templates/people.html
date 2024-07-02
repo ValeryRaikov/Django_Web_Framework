@@ -1,0 +1,24 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block main_content %}
+
+    <div id="people-list">Loading...</div>
+
+    <script>
+        const peopleUrl = '{% url 'show people' %}';
+        const init = function () {
+            fetch(peopleUrl)
+                .then(response => response.json())
+                .then(({people}) => {
+                    console.log(people);
+                    const listItems = people.map(
+                        person => `<li>${person}</li>`
+                    ).join('');
+
+                    document.getElementById('people-list').innerHTML = `<ul class=list>${listItems}</ul>`
+                }).catch(err => console.error('Error fetching data:', err));
+        }
+    </script>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Test App</title>
+</head>
+<body>
+    <div class="basic-navigation">
+        <a href="{% url 'show departments' %}">Departments</a>
+        <a href="{% url 'show people' %}">People</a>
+        <a href="{% url 'show index' %}">Home</a>
+        <a href="{% url 'register person' %}">Register</a>
+    </div>
+
+    {% block main_content %}
+    {% endblock %}
+</body>
+</html>

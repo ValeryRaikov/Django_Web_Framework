@@ -1,0 +1,32 @@
+{% extends 'base/base.html' %}
+
+{% block main_content %}
+
+        <form method="post" action="{% url 'register person' %}">
+            <h1>Person Register Form</h1>
+            {% csrf_token %}
+            <div>
+                {{ form.first_name.label_tag }}
+                {{ form.first_name }}
+            </div>
+            <div>
+                {{ form.last_name.label_tag }}
+                {{ form.last_name }}
+            </div>
+            <div>
+                {{ form.age.label_tag }}
+                {{ form.age }}
+            </div>
+            <div>
+                {{ form.email.label_tag }}
+                {{ form.email }}
+            </div>
+            <div>
+                {{ form.department.label_tag }}
+                {{ form.department }}
+            </div>
+
+            <button type="submit">Submit</button>
+    </form>
+
+{% endblock %}
