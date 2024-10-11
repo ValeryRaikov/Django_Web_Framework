@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+
+<div>
+    <a href="{% url 'list todos' %}">List Todos</a>
+    <a href="{% url 'create' %}">Create Todo</a>
+</div>
+
+{% block page_content %}
+{% endblock %}
+
+{% if request.path != '/' %}
+    <div>
+        <a href="{% url 'index' %}">Return to Home Page</a>
+    </div>
+{% endif %}
+
+</body>
+</html>

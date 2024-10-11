@@ -1,0 +1,15 @@
+{% extends 'base/base.html' %}
+
+{% block title %}
+    Delete Todo
+{% endblock %}
+
+{% block page_content %}
+    <h2>"{{ todo.title }}" Todo Delete</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        <p>Are you sure you want to delete: "{{ todo.title }}"</p>
+        <input type="submit" value="Confirm">
+    </form>
+{% endblock %}

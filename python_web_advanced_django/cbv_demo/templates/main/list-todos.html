@@ -1,0 +1,23 @@
+{% extends 'base/base.html' %}
+
+{% block title %}
+    List Todos
+{% endblock %}
+
+{% block page_content %}
+    <h2>All Todos</h2>
+
+    <ul>
+        {% for todo in todos %}
+            <li>
+                <p>{{ todo.title }}</p>
+                <a href="{% url 'todo details' todo.pk %}">Details</a>
+                <a href="{% url 'update' todo.pk %}">Update</a>
+                <a href="{% url 'delete' todo.pk %}">Delete</a>
+            </li>
+            <hr>
+            {% empty %}
+            <h3>No todos added yet!</h3>
+        {% endfor %}
+    </ul>
+{% endblock %}

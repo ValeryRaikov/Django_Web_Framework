@@ -1,0 +1,13 @@
+{% extends 'base/base.html' %}
+
+{% block title %}
+    Todo Details
+{% endblock %}
+
+{% block page_content %}
+    <h2>"{{ todo.title }}" Todo Details</h2>
+
+    <h3>Title: {{ todo.title }}</h3>
+    <h3>Description: {{ todo.description }}</h3>
+    <h3>Created: {{ todo.created_at }}</h3>
+{% endblock %}
